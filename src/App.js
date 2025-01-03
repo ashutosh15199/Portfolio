@@ -7,11 +7,12 @@ import Projects from './components/Project'
 import Contact from './components/Contact'
 import Services from './components/Services'
 import SkillCart from './components/SkillCart'
-import Image from './data/Testimonials'
+// import Testimonials from './data/Testimonials'
 function App () {
   return (
     <div className=''>
-      <Header bgImage={Image} />
+      <Header/>
+      {/* <Testimonials/> */}
       <div className='mt-[4rem] z-10 relative'>
         <Routes>
           <Route path='/' element={<About />} />

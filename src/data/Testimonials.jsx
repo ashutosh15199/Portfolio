@@ -1,9 +1,14 @@
-import React from 'react'
+// import React from 'react';
+// import SkillCart from '../components/SkillCart';
+// console.log(Data);
+// const Testimonials = () => {
+//   console.log("Testimonials:", Data); // Ensure Data is not undefined or empty
 
-const Testimonials = () => {
-  return (
-    <div>Testimonials</div>
-  )
-}
+//   return (
+//     <>
+//       <SkillCart skills={Data} /> {/* Pass Data as a prop */}   
+//     </>
+//   );
+// };
 
-export default Testimonials
+// export default Testimonials;

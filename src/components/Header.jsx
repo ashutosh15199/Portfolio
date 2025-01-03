@@ -1,172 +1,242 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
-import ContactsIcon from '@mui/icons-material/Contacts';
-import ScienceIcon from '@mui/icons-material/Science';
-import SplitscreenIcon from '@mui/icons-material/Splitscreen';
-import HomeRepairServiceIcon from '@mui/icons-material/HomeRepairService';
-import CompassCalibrationIcon from '@mui/icons-material/CompassCalibration';
-import { Outlet } from 'react-router-dom';
-
+import React from 'react'
+import { Link, Element, animateScroll as scroll } from 'react-scroll'
+import About from './About'
+import Skill from './SkillCart'
+import Service from './Services'
+import Projects from './Project'
+import Experience from './Experience'
+import Contact from './Contact'
+import MobileViewAbout from './MobileViewAbout'
 const Header = () => {
-  const [scroll, setScroll] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY); // Get the vertical scroll position
-    };
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Calculate opacity based on scroll position
-  const navOpacity = Math.min(1, scroll / 300) || 1;
-
   return (
     <>
       {/* Full Page Background */}
-      <div className="min-h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 fixed inset-0 z-0"></div>
+      <div className="min-h-screen bg-gradient-to-r from-[#12161b] via-[#2c3035] to-[#12161b] bg-[length:200%_200%] animate-gradient fixed inset-0 z-0"></div>
+
 
       {/* Desktop View */}
       <div className="hidden md:block relative z-10">
         {/* Desktop Navigation */}
-        <div className="relative z-10">
-          <nav
-            className="container flex mx-auto justify-center mt-5 border border-gray-500 max-w-[500px] sm:text-sm rounded-2xl h-10 py-2 bg-opacity-80 transition-all duration-300"
-            style={{ opacity: navOpacity }}
-          >
-            <ul className="flex space-x-4 text-white font-bold">
-              <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? 'text-white bg-green-800 px-2 py-1 rounded-lg' : 'hover:text-green-800 hover:bg-opacity-60 transition-all px-2 py-1 rounded-lg'
-                  }
-                >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/skill"
-                  className={({ isActive }) =>
-                    isActive ? 'text-white bg-green-800 px-2 py-1 rounded-lg' : 'hover:text-green-800 hover:bg-opacity-60 transition-all px-2 py-1 rounded-lg'
-                  }
-                >
-                  Skill
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/services"
-                  className={({ isActive }) =>
-                    isActive ? 'text-white bg-green-800 px-2 py-1 rounded-lg' : 'hover:text-green-800 hover:bg-opacity-60 transition-all px-2 py-1 rounded-lg'
-                  }
-                >
-                  Services
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/projects"
-                  className={({ isActive }) =>
-                    isActive ? 'text-white bg-green-800 px-2 py-1 rounded-lg' : 'hover:text-green-800 hover:bg-opacity-60 transition-all px-2 py-1 rounded-lg'
-                  }
-                >
-                  Projects
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/experience"
-                  className={({ isActive }) =>
-                    isActive ? 'text-white bg-green-800 px-2 py-1 rounded-lg' : 'hover:text-green-800 hover:bg-opacity-60 transition-all px-2 py-1 rounded-lg'
-                  }
-                >
-                  Experience
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    isActive ? 'text-white bg-green-800 px-2 py-1 rounded-lg' : 'hover:text-green-800 hover:bg-opacity-60 transition-all px-2 py-1 rounded-lg'
-                  }
-                >
-                  Contact
-                </NavLink>
-              </li>
-            </ul>
-          </nav>
+        <nav className="relative z-10 container flex mx-auto justify-center mt-5 border border-gray-500 max-w-[500px] sm:text-sm rounded-2xl h-10 py-2 bg-opacity-80 transition-all duration-300">
+          <ul className="flex space-x-4 text-white font-bold">
+            <li>
+              <Link
+                to="about"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer text-white"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="skill"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer text-white"
+              >
+                Skill
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="services"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer text-white"
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="projects"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer text-white"
+              >
+                Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="experience"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer text-white"
+              >
+                Experience
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer text-white"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Sections */}
+        <div>
+          <Element name="about" className="h-screen flex items-center  justify-center">
+            <h1 className="text-white">
+              <About />
+            </h1>
+          </Element>
+          <Element name="skill" className="h-screen flex  justify-center">
+            <h1 className="text-white">
+              <Skill />
+            </h1>
+          </Element>
+          <Element name="services" className="h-screen flex items-center justify-center">
+            <h1 className="text-white">
+              <Service />
+            </h1>
+          </Element>
+          <Element name="projects" className="h-screen flex items-center justify-center">
+            <h1 className="text-white">
+              <Projects />
+            </h1>
+          </Element>
+          <Element name="experience" className="h-screen flex items-center justify-center">
+            <h1 className="text-white">
+              <Experience />
+            </h1>
+          </Element>
+          <Element name="contact" className="h-screen flex items-center justify-center">
+            <h1 className="text-white">
+              <Contact />
+            </h1>
+          </Element>
         </div>
       </div>
 
       {/* Mobile View */}
-      <div className="md:hidden block relative z-10">
+      <div className='md:hidden block relative z-10'>
         {/* Mobile Navigation */}
-        
-
-        <div className="relative z-10">
+         <MobileViewAbout/>
+        {/* <div className='relative z-10'>
           <nav
-            className="flex container mx-auto justify-center mt-5 border border-gray-500 max-w-[250px] sm:text-sm rounded-2xl h-10 py-2 bg-opacity-80"
+            className='flex container mx-auto justify-center mt-5 border border-gray-500 max-w-[250px] sm:text-sm rounded-2xl h-10 py-2 bg-opacity-80'
             style={{ opacity: navOpacity }}
           >
-            <ul className="flex space-x-4 text-white font-bold">
+            <ul className='flex space-x-4 text-white font-bold'>
               <li>
-                <NavLink
-                  to="/"
-                  className={({ isActive }) => (isActive ? 'text-white' : 'hover:text-green-800')}
+                <Link
+                  to='/'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer
+                  text-white'
                 >
                   <CompassCalibrationIcon />
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/skill"
-                  className={({ isActive }) => (isActive ? 'text-white' : 'hover:text-green-800')}
+                <Link
+                  to='/skill'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer
+                  text-white'
                 >
                   <SplitscreenIcon />
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/services"
-                  className={({ isActive }) => (isActive ? 'text-white' : 'hover:text-green-800')}
+                <Link
+                  to='/services'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer
+                  text-white'
                 >
                   <HomeRepairServiceIcon />
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/projects"
-                  className={({ isActive }) => (isActive ? 'text-white' : 'hover:text-green-800')}
+                <Link
+                  to='/projects'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer
+                  text-white'
                 >
                   <ScienceIcon />
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/experience"
-                  className={({ isActive }) => (isActive ? 'text-white' : 'hover:text-green-800')}
+                <Link
+                  to='/experience'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer
+                  text-white'
                 >
                   <AccountTreeIcon />
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) => (isActive ? 'text-white' : 'hover:text-green-800')}
+                <Link
+                  to='/contact'
+                  smooth={true}
+                  duration={500}
+                  className='cursor-pointer
+                  text-white'
                 >
                   <ContactsIcon />
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </nav>
-        </div>
+          <div className=''>
+            <Element
+              name='/'
+              className='h-screen  flex items-center justify-center'
+            >
+              <h1 className=' text-white'><About/></h1>
+            </Element>
+            <Element
+              name='/skill'
+              className='h-screen  flex items-center justify-center'
+            >
+              <h1 className=' text-white'><Skill/></h1>
+            </Element>
+            <Element
+              name='/services'
+              className='h-screen  flex items-center justify-center'
+            >
+              <h1 className=' text-white'><Service/></h1>
+            </Element>
+            <Element
+              name='/projects'
+              className='h-screen  flex items-center justify-center'
+            >
+              <h1 className=' text-white'><Projects/></h1>
+            </Element>
+            <Element
+              name='/experience'
+              className='h-screen flex items-center justify-center'
+            >
+              <h1 className=' text-white'><Experience/></h1>
+            </Element>
+            <Element
+              name='/contact'
+              className='h-screen  flex items-center justify-center'
+            >
+              <h1 className=' text-white'><Contact/></h1>
+            </Element>
+          </div>
+        </div> */}
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
