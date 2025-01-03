@@ -15,7 +15,7 @@ function App () {
       {/* <Testimonials/> */}
       <div className='mt-[4rem] z-10 relative'>
         <Routes>
-          <Route path='/' element={<About />} />
+          {/* <Route path='/' element={<About />} /> */}
           <Route path='/services' element={<Services />} />
           <Route path='/skill' element={<SkillCart />} />
           <Route path='/projects' element={<Projects />} />

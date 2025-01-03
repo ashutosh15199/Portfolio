@@ -16,7 +16,7 @@ const About = () => {
   })
   return (
     <>
-      <div className='flex flex-col items-center justify-center  px-6  space-y-8 sm:space-y-6'>
+      <div className='flex flex-col items-center justify-center  px-6  space-y-8 sm:space-y-6 mt-[100px] md:mt-[300px] '>
         {/* First Section: Introduction */}
         <div className='flex flex-wrap items-center justify-center gap-2 text-center mt-6 '>
           <h1 className='text-white font-bold text-[36px] sm:text-[50px] md:text-[80px]'>
@@ -60,9 +60,9 @@ const About = () => {
           href='https://github.com/ashutosh15199'
           target='_blank'
           rel='noopener noreferrer'
-          className='text-gray-900 hover:text-black rounded-full border-2 border-gray-900 p-4 transition transform hover:scale-110 hover:border-black duration-300'
+          className='text-white hover:text-black rounded-full border-2 border-gray-900 p-4 transition transform hover:scale-110 hover:border-black duration-300'
         >
-          <GitHubIcon className='text-[30px]' />
+          <GitHubIcon className='text-[30px] text-white' />
         </a>
 
         {/* LinkedIn Icon */}
