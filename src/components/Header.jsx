@@ -27,12 +27,12 @@ const Header = () => {
           <li>
             <Link to="services" smooth={true} duration={500} className="cursor-pointer text-white">Services</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="projects" smooth={true} duration={500} className="cursor-pointer text-white">Projects</Link>
           </li>
           <li>
             <Link to="experience" smooth={true} duration={500} className="cursor-pointer text-white">Experience</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="contact" smooth={true} duration={500} className="cursor-pointer text-white">Contact</Link>
           </li>
@@ -50,12 +50,12 @@ const Header = () => {
         <Element name="services" className="flex items-center justify-center">
           <h1 className="text-white"><Service /></h1>
         </Element>
-        <Element name="projects" className="flex items-center justify-center">
+        {/* <Element name="projects" className="flex items-center justify-center">
           <h1 className="text-white"><Projects /></h1>
         </Element>
         <Element name="experience" className="flex items-center justify-center">
           <h1 className="text-white"><Experience /></h1>
-        </Element>
+        </Element> */}
         <Element name="contact" className="flex items-center justify-center">
           <h1 className="text-white"><Contact /></h1>
         </Element>

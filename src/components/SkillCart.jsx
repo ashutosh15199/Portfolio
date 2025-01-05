@@ -21,18 +21,18 @@ const SkillCart = () => {
           className="bg-[rgba(8,21,16,0.5)] hover:bg-[#12161b] rounded-lg border border-gray-700 flex flex-col items-center shadow-lg"
         >
           {/* Card Title */}
-          <h4 className="text-green-500 font-bold text-lg sm:mt-20">{item.title}</h4>
+          <h4 className="text-green-500 font-bold text-lg gap-9 mt-3">{item.title}</h4>
   
           {/* Card Content */}
           <div className="flex flex-wrap gap-4 justify-center">
             {item.items.map((img, index) => (
               <div key={index} className="flex flex-col items-center">
                 <img
-                  className="rounded-t-lg w-[50px] h-[50px] mb-2"
+                  className="rounded-t-lg w-[50px] h-[50px] mb-5 mt-5"
                   src={img.image}
                   alt=""
                 />
-                <p className="text-gray-500 text-sm">{img.title}</p>
+                <p className="text-gray-500 text-sm mb-4">{img.title}</p>
               </div>
             ))}
           </div>

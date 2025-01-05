@@ -49,7 +49,7 @@ const MobileViewAbout = () => {
             <HomeRepairServiceIcon />
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             to='/projects'
             smooth={true}
@@ -68,7 +68,7 @@ const MobileViewAbout = () => {
           >
             <AccountTreeIcon />
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             to='/contact'
@@ -92,12 +92,12 @@ const MobileViewAbout = () => {
       <Element name='/services' className=' flex items-center justify-center'>
         <h1 className='text-white'><Service/></h1>
       </Element>
-      <Element name='/projects' className='flex items-center justify-center'>
+      {/* <Element name='/projects' className='flex items-center justify-center'>
         <h1 className='text-white'><Projects/></h1>
       </Element>
       <Element name='/experience' className='flex items-center justify-center'>
         <h1 className='text-white'><Experience/></h1>
-      </Element>
+      </Element> */}
       <Element name='/contact' className='flex items-center justify-center'>
         <h1 className='text-white'><Contact/></h1>
       </Element>
